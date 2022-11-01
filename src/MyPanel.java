@@ -68,13 +68,12 @@ public class MyPanel extends JPanel implements MouseListener {
         int y = e.getY();
 
         Point pointClicked = onPoint(points,x,y);
-        System.out.println(pointClicked);
-        if(pointClicked==null)
+        if(e.getButton() == e.BUTTON1 && pointClicked==null)
             points.add(new Point(x, y));
 
 
         //if is right click and clicked on point delete it.
-        if (e.getButton() == e.BUTTON2 && pointClicked != null){
+        if (e.getButton() == e.BUTTON3 && pointClicked != null){
         points.remove(pointClicked);
         }
 
